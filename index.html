@@ -24,56 +24,73 @@
 
 
     <script src="https://maps.google.com/maps/api/js?key=AIzaSyDEaxG7HKu0YnAAMaxe3d822y4eW5CoxSo" type="text/javascript"></script>
-		<script async type="text/javascript">
-			// On initialise la latitude et la longitude de Paris (centre de la carte)
-			var lat = 33.9715904;
-			var lon = -6.8498129;
-			var map = null;
-			// Fonction d'initialisation de la carte
-			// Nous initialisons une liste de marqueurs
-var villes = {
-	"rabat":{"lat": 33.9715904,"lon": -6.8498129},
-	"casablanca":{"lat": 33.5731104,"lon": -7.5898434},
-	"dakhla":{"lat": 23.562461,"lon": -15.906171},
-	"marakech":{"lat": 31.630000,"lon": -8.008889}
-};
-function initMap() {
-	map = new google.maps.Map(document.getElementById("map"), {
-		center: new google.maps.LatLng(lat, lon),
-		zoom: 11,
-		mapTypeId: google.maps.MapTypeId.ROADMAP,
-		mapTypeControl: true,
-		scrollwheel: false,
-		mapTypeControlOptions: {
-			style: google.maps.MapTypeControlStyle.HORIZONTAL_BAR
-		},
-		navigationControl: true,
-		navigationControlOptions: {
-			style: google.maps.NavigationControlStyle.ZOOM_PAN
-		}
-	});
-	// Nous parcourons la liste des villes
-	for(ville in villes){
-		var marker = new google.maps.Marker({
-			// A chaque boucle, la latitude et la longitude sont lues dans le tableau
-			position: {lat: villes[ville].lat, lng: villes[ville].lon},
-			// On en profite pour ajouter une info-bulle contenant le nom de la ville
-			title: ville,
-			map: map
-		});	
-	}
-}
-		
-			window.onload = function(){
-				// Fonction d'initialisation qui s'exécute lorsque le DOM est chargé
-				initMap(); 
-			};
-		</script>
-		<style type="text/css">
-			#map{ /* la carte DOIT avoir une hauteur sinon elle n'apparaît pas */
-				height:400px;
-			}
-		</style>
+    <script async type="text/javascript">
+        // On initialise la latitude et la longitude de Paris (centre de la carte)
+        var lat = 33.9715904;
+        var lon = -6.8498129;
+        var map = null;
+        // Fonction d'initialisation de la carte
+        // Nous initialisons une liste de marqueurs
+        var villes = {
+            "rabat": {
+                "lat": 33.9715904,
+                "lon": -6.8498129
+            },
+            "casablanca": {
+                "lat": 33.5731104,
+                "lon": -7.5898434
+            },
+            "dakhla": {
+                "lat": 23.562461,
+                "lon": -15.906171
+            },
+            "marakech": {
+                "lat": 31.630000,
+                "lon": -8.008889
+            }
+        };
+
+        function initMap() {
+            map = new google.maps.Map(document.getElementById("map"), {
+                center: new google.maps.LatLng(lat, lon),
+                zoom: 11,
+                mapTypeId: google.maps.MapTypeId.ROADMAP,
+                mapTypeControl: true,
+                scrollwheel: false,
+                mapTypeControlOptions: {
+                    style: google.maps.MapTypeControlStyle.HORIZONTAL_BAR
+                },
+                navigationControl: true,
+                navigationControlOptions: {
+                    style: google.maps.NavigationControlStyle.ZOOM_PAN
+                }
+            });
+            // Nous parcourons la liste des villes
+            for (ville in villes) {
+                var marker = new google.maps.Marker({
+                    // A chaque boucle, la latitude et la longitude sont lues dans le tableau
+                    position: {
+                        lat: villes[ville].lat,
+                        lng: villes[ville].lon
+                    },
+                    // On en profite pour ajouter une info-bulle contenant le nom de la ville
+                    title: ville,
+                    map: map
+                });
+            }
+        }
+
+        window.onload = function() {
+            // Fonction d'initialisation qui s'exécute lorsque le DOM est chargé
+            initMap();
+        };
+    </script>
+    <style type="text/css">
+        #map {
+            /* la carte DOIT avoir une hauteur sinon elle n'apparaît pas */
+            height: 400px;
+        }
+    </style>
     <!--
 Tooplate 2119 Gymso Fitness
 https://www.tooplate.com/view/2119-gymso-fitness
@@ -148,7 +165,7 @@ https://www.tooplate.com/view/2119-gymso-fitness
 
                     <div class="col-lg-8 col-md-10 mx-auto col-12">
                         <div class="hero-text mt-5 text-center">
-                            <div><img style="width: 462px;" src="images/class/headimage.png" alt="head_img"></div>
+                            <div><img style="width: 100%;margin-top: 50px;" src="images/class/headimage.png" alt="head_img"></div>
                             <br>
                             <h6 style="font-size: 30px;" data-aos="fade-up" data-aos-delay="300">4<sup>ème</sup> EDITION DU <b style="color: red;">FESTIVAL DES FABLABS UNIVERSITAIRES</b> 7<sup>ème</sup> EDITION DE LA COMPETITION INTERNATIONALE DE L'INNOVATION </h6>
 
@@ -169,7 +186,7 @@ https://www.tooplate.com/view/2119-gymso-fitness
     </section>
 
 
-    
+
 
 
     <!-- ABOUT -->
@@ -649,9 +666,9 @@ https://www.tooplate.com/view/2119-gymso-fitness
 	3. Click "Share" and choose "Embed map" tab
 	4. Copy only URL and paste it within the src="" field below
 -->
-<div id="map">
-    <!-- Ici s'affichera la carte -->
-</div>
+                    <div id="map">
+                        <!-- Ici s'affichera la carte -->
+                    </div>
                 </div>
 
             </div>
